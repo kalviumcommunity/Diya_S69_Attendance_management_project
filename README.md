@@ -48,3 +48,32 @@ Welcome to the Attendance Management Project!
 ### How to compile
 ```bash
 javac src/com/school/*.java
+
+## Part 2 - Core Domain Modelling
+
+In this part, we created two base classes: `Student` and `Course`.  
+We then used arrays of these objects in `Main.java` to manage and display details.
+
+### Features
+- Defined `Student` with id, name, age
+- Defined `Course` with code, title, credits
+- Created arrays of Students and Courses
+- Displayed their details via methods
+
+### How to Run
+```bash
+cd src
+javac com/school/*.java
+java com.school.Main
+
+## Part 3: Constructor Initialization & Auto-ID Generation
+- Implemented parameterized constructors in `Student` and `Course` classes for object initialization.
+- Utilized `private static` member variables for automatic and unique ID generation.
+- Demonstrated the use of the `this` keyword to distinguish instance variables from constructor parameters.
+- Changed `Course`'s `courseId` to `int` for simpler auto-generation and updated its display.
+- Updated `Main.java` to use constructors and show ID progression.
+
+### How to Run (ensure this is up-to-date)
+1. Navigate to the project root directory.
+2. Compile: `javac src/com/school/Student.java src/com/school/Course.java src/com/school/Main.java` (or `javac src/com/school/*.java`)
+3. Run: `java -cp src com.school.Main`
