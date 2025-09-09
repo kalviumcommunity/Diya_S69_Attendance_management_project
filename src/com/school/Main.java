@@ -1,29 +1,42 @@
 package com.school;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // Create arrays
-        Student[] students = new Student[2];
-        Course[] courses = new Course[2];
+        // Create students
+        Student student1 = new Student("Alice", 20);
+        Student student2 = new Student("Bob", 22);
 
-        // Add students
-        students[0] = new Student(1, "Alice", 20);
-        students[1] = new Student(2, "Bob", 22);
-
-        // Add courses
-        courses[0] = new Course("CS101", "Intro to CS", 4);
-        courses[1] = new Course("MATH201", "Calculus II", 3);
+        // Create courses
+        Course course1 = new Course("Intro to CS", 4);
+        Course course2 = new Course("Calculus II", 3);
 
         // Display all students
         System.out.println("---- Students ----");
-        for (Student s : students) {
-            s.displayInfo();
-        }
+        student1.displayInfo();
+        student2.displayInfo();
 
         // Display all courses
         System.out.println("\n---- Courses ----");
-        for (Course c : courses) {
-            c.displayInfo();
+        course1.displayInfo();
+        course2.displayInfo();
+
+        // Attendance records
+        System.out.println("\n---- Attendance Records ----");
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
+
+        AttendanceRecord record1 = new AttendanceRecord(student1.getStudentId(), course1.getCourseId(), "Present");
+        AttendanceRecord record2 = new AttendanceRecord(student2.getStudentId(), course2.getCourseId(), "Absent");
+        AttendanceRecord record3 = new AttendanceRecord(student1.getStudentId(), course2.getCourseId(), "Holiday"); // Invalid
+
+        attendanceLog.add(record1);
+        attendanceLog.add(record2);
+        attendanceLog.add(record3);
+
+        for (AttendanceRecord record : attendanceLog) {
+            record.displayRecord();
         }
     }
 }
