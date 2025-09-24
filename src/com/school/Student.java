@@ -1,25 +1,29 @@
 package com.school;
 
-public class Student {
-    private int studentId;
-    private String name;
+public class Student extends Person {
     private int age;
-    private static int nextStudentIdCounter = 1;
+    private String gradeLevel;
 
-    // Constructor with name and age (ID auto-generated)
-    public Student(String name, int age) {
-        this.studentId = nextStudentIdCounter++;
-        this.name = name;
+    // Constructor uses super(name) for id and name
+    public Student(String name, int age, String gradeLevel) {
+        super(name);
         this.age = age;
+        this.gradeLevel = gradeLevel;
     }
 
     // Getters
-    public int getStudentId() { return studentId; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
+    public int getAge() {
+        return age;
+    }
 
-    // Method to display student details
-    public void displayInfo() {
-        System.out.println("Student ID: S" + studentId + ", Name: " + name + ", Age: " + age);
+    public String getGradeLevel() {
+        return gradeLevel;
+    }
+
+    // Override displayDetails
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Role: Student, Age: " + age + ", Grade Level: " + gradeLevel);
     }
 }
