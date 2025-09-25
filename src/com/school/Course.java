@@ -1,6 +1,6 @@
 package com.school;
 
-public class Course {
+public class Course implements Storable {
     private int courseId;
     private String courseName;
     private int credits;
@@ -21,5 +21,11 @@ public class Course {
     // Method to display course details
     public void displayInfo() {
         System.out.println("Course ID: C" + courseId + ", Course Name: " + courseName + ", Credits: " + credits);
+    }
+
+    // Implementation of Storable
+    @Override
+    public String toDataString() {
+        return courseId + "," + courseName + "," + credits;
     }
 }

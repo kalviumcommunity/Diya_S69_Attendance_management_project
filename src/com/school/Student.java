@@ -1,6 +1,6 @@
 package com.school;
 
-public class Student extends Person {
+public class Student extends Person implements Storable {
     private int age;
     private String gradeLevel;
 
@@ -25,5 +25,11 @@ public class Student extends Person {
     public void displayDetails() {
         super.displayDetails();
         System.out.println("Role: Student, Age: " + age + ", Grade Level: " + gradeLevel);
+    }
+
+    // Implementation of Storable
+    @Override
+    public String toDataString() {
+        return getId() + "," + getName() + "," + age + "," + gradeLevel;
     }
 }
