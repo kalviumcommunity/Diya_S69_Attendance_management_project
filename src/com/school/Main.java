@@ -36,5 +36,22 @@ public class Main {
         for (AttendanceRecord record : attendanceLog) {
             record.displayRecord();
         }
+
+        // ---------------- Persistence Demo ----------------
+        System.out.println("\n---- Saving Data to Files ----");
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(student1);
+        students.add(student2);
+
+        ArrayList<Course> courses = new ArrayList<>();
+        courses.add(course1);
+        courses.add(course2);
+
+        FileStorageService storageService = new FileStorageService();
+        storageService.saveData(students, "students.txt");
+        storageService.saveData(courses, "courses.txt");
+        storageService.saveData(attendanceLog, "attendance_log.txt");
+
+        System.out.println("Data saved successfully!");
     }
 }
